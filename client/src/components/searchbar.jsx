@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
+import "./searchbar.css";
 import axios from "axios";
 
 //import { MDBCol, MDBSelectInput, MDBSelect} from "mdbreact";
@@ -135,7 +136,7 @@ class Search extends React.Component {
     } else {
       return (
         <div>
-          <div id="wrapper">
+          <div id="wrapper_2">
             {this.state.newData.map((data, i) => {
               return (
                 <table>
