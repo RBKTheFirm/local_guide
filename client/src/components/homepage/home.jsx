@@ -5,15 +5,24 @@ import Login from "./login.jsx";
 import Signup from "./signup.jsx";
 import $ from "jquery";
 import "./home.css";
+
 import Edit from "../Edit.jsx";
 import Search from "../searchbar.jsx";
+import FindProfile from "../localguide.jsx";
+import Axios from "axios";
 
 export class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      items: [],
       display: "none",
     };
+  }
+  componentDidMount() {
+    Axios.get("/1").then((data) => {
+      this.setState({ items: data.data });
+    });
   }
   handleSearch() {
     $("#home").css("filter", "blur(8px)");
@@ -202,58 +211,23 @@ export class Home extends Component {
               </div>
             </section>
 
-            <section className="wrapper style1">
-              <div className="inner">
-                <header className="align-center">
-                  <h2>Aliquam ipsum purus dolor</h2>
-                  <p>
-                    Cras sagittis turpis sit amet est tempus, sit amet
-                    consectetur purus tincidunt.
-                  </p>
-                </header>
-                <div className="flex flex-3">
-                  <div className="col align-center">
-                    <div className="image round fit">
-                      <img src="images/pic03.jpg" alt="" />
-                    </div>
-                    <p>
-                      Sed congue elit malesuada nibh, a varius odio vehicula
-                      aliquet. Aliquam consequat, nunc quis sollicitudin
-                      aliquet.{" "}
-                    </p>
-                    <a href="#" className="button">
-                      Learn More
-                    </a>
-                  </div>
-                  <div className="col align-center">
-                    <div className="image round fit">
-                      <img src="images/pic05.jpg" alt="" />
-                    </div>
-                    <p>
-                      Sed congue elit malesuada nibh, a varius odio vehicula
-                      aliquet. Aliquam consequat, nunc quis sollicitudin
-                      aliquet.{" "}
-                    </p>
-                    <a href="#" className="button">
-                      Learn More
-                    </a>
-                  </div>
-                  <div className="col align-center">
-                    <div className="image round fit">
-                      <img src="images/pic04.jpg" alt="" />
-                    </div>
-                    <p>
-                      Sed congue elit malesuada nibh, a varius odio vehicula
-                      aliquet. Aliquam consequat, nunc quis sollicitudin
-                      aliquet.{" "}
-                    </p>
-                    <a href="#" className="button">
-                      Learn More
-                    </a>
-                  </div>
-                </div>
+            <div>
+              <div id="wrapper">
+                {this.state.items.map((data, i) => {
+                  return (
+                    <table>
+                      <tbody>
+                        <tr>
+                          <th>
+                            <FindProfile key={i} data={data} />
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  );
+                })}
               </div>
-            </section>
+            </div>
           </div>
           <footer id="footer">
             <div className="copyright">

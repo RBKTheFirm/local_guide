@@ -1,8 +1,67 @@
 import React from "react";
 import "./Edit.css";
+import axios from "axios";
+import $ from "jquery";
 class Edit extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: "",
+      age: "",
+      email: "",
+      city: "",
+      phone: "",
+      gender: "",
+      languages: [],
+      img: "",
+      description: "",
+    };
+  }
+  handleName(e) {
+    this.setState({ name: e.target.value });
+  }
+  handleAge(e) {
+    this.setState({ age: e.target.value });
+  }
+  handleEmail(e) {
+    this.setState({ email: e.target.value });
+  }
+  handlePhone(e) {
+    this.setState({ phone: e.target.value });
+  }
+  handleGender(e) {
+    this.setState({ gender: e.currentTarget.value });
+  }
+  handleLanguages(e) {
+    let x = this.state.languages;
+    if (e.target.checked) x.push(e.target.value);
+
+    this.setState({ languages: x });
+  }
+  handleCity(e) {
+    this.setState({ city: e.target.value });
+  }
+  handleArea(e) {
+    this.setState({ description: e.target.value });
+  }
+  handleClick(e) {
+    e.target.value = "";
+  }
+  handleImg() {}
+
+  handleSubmit() {
+    let x = {
+      name: this.state.name,
+      description: this.state.description,
+      age: this.state.age,
+      email: this.state.email,
+      gender: this.state.gender,
+      phone: this.state.phone,
+      languages: this.state.languages,
+      city: this.state.city,
+    };
+    axios.post("/", x);
+    window.location.reload(false);
   }
 
   render() {
@@ -10,94 +69,145 @@ class Edit extends React.Component {
       <div className="container">
         <form>
           <label htmlFor="name">Full Name</label>
-          <input type="text" id="name" placeholder="Full Name" />
+          <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            onChange={this.handleName.bind(this)}
+          />
           <label htmlFor="age">Age</label>
-          <input type="text" id="age" placeholder="Age" />
+          <input
+            type="text"
+            id="age"
+            placeholder="Age"
+            onChange={this.handleAge.bind(this)}
+          />
           <label htmlFor="email">Email</label>
-          <input type="email" id="email" placeholder="Email Address" />
+          <input
+            type="text"
+            id="email"
+            placeholder="Email Address"
+            onChange={this.handleEmail.bind(this)}
+          />
+          <br></br>
+          <label htmlFor="city">City</label>
+          <input
+            type="text"
+            id="city"
+            placeholder="Your city"
+            onChange={this.handleCity.bind(this)}
+          />
+          <br></br>
           <label htmlFor="phone">Phone Number</label>
-          <input type="text" id="phone" placeholder="Phone number" />
+          <br></br>
+          <input
+            type="text"
+            id="phone"
+            placeholder="Phone number"
+            onChange={this.handlePhone.bind(this)}
+          />
           <label htmlFor="gender">Gender</label>
-          <select id="gender">
+          <select id="gender" onChange={this.handleGender.bind(this)}>
+            <option value="">Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
-          <label htmlFor="Language">Language</label>
-          <select data-placeholder="Choose a Language...">
-            <option value="AF">Afrikaans</option>
-            <option value="SQ">Albanian</option>
-            <option value="AR">Arabic</option>
-            <option value="HY">Armenian</option>
-            <option value="EU">Basque</option>
-            <option value="BN">Bengali</option>
-            <option value="BG">Bulgarian</option>
-            <option value="CA">Catalan</option>
-            <option value="KM">Cambodian</option>
-            <option value="ZH">Chinese (Mandarin)</option>
-            <option value="HR">Croatian</option>
-            <option value="CS">Czech</option>
-            <option value="DA">Danish</option>
-            <option value="NL">Dutch</option>
-            <option value="EN">English</option>
-            <option value="ET">Estonian</option>
-            <option value="FJ">Fiji</option>
-            <option value="FI">Finnish</option>
-            <option value="FR">French</option>
-            <option value="KA">Georgian</option>
-            <option value="DE">German</option>
-            <option value="EL">Greek</option>
-            <option value="GU">Gujarati</option>
-            <option value="HE">Hebrew</option>
-            <option value="HI">Hindi</option>
-            <option value="HU">Hungarian</option>
-            <option value="IS">Icelandic</option>
-            <option value="ID">Indonesian</option>
-            <option value="GA">Irish</option>
-            <option value="IT">Italian</option>
-            <option value="JA">Japanese</option>
-            <option value="JW">Javanese</option>
-            <option value="KO">Korean</option>
-            <option value="LA">Latin</option>
-            <option value="LV">Latvian</option>
-            <option value="LT">Lithuanian</option>
-            <option value="MK">Macedonian</option>
-            <option value="MS">Malay</option>
-            <option value="ML">Malayalam</option>
-            <option value="MT">Maltese</option>
-            <option value="MI">Maori</option>
-            <option value="MR">Marathi</option>
-            <option value="MN">Mongolian</option>
-            <option value="NE">Nepali</option>
-            <option value="NO">Norwegian</option>
-            <option value="FA">Persian</option>
-            <option value="PL">Polish</option>
-            <option value="PT">Portuguese</option>
-            <option value="PA">Punjabi</option>
-            <option value="QU">Quechua</option>
-            <option value="RO">Romanian</option>
-            <option value="RU">Russian</option>
-            <option value="SM">Samoan</option>
-            <option value="SR">Serbian</option>
-            <option value="SK">Slovak</option>
-            <option value="SL">Slovenian</option>
-            <option value="ES">Spanish</option>
-            <option value="SW">Swahili</option>
-            <option value="SV">Swedish </option>
-            <option value="TA">Tamil</option>
-            <option value="TT">Tatar</option>
-            <option value="TE">Telugu</option>
-            <option value="TH">Thai</option>
-            <option value="BO">Tibetan</option>
-            <option value="TO">Tonga</option>
-            <option value="TR">Turkish</option>
-            <option value="UK">Ukrainian</option>
-            <option value="UR">Urdu</option>
-            <option value="UZ">Uzbek</option>
-            <option value="VI">Vietnamese</option>
-            <option value="CY">Welsh</option>
-            <option value="XH">Xhosa</option>
-          </select>
-          <button>Submit</button>
+          <h4>Choose your Languages :</h4>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            className="lan"
+            id="Arabic"
+            defaultValue="Arabic"
+          />
+          <label htmlFor="Arabic">Arabic</label> <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            className="lan"
+            id="Chinese"
+            defaultValue="Chinese"
+          />
+          <label htmlFor="Chinese">Chinese</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            id="English"
+            className="lan"
+            defaultValue="English"
+          />
+          <label htmlFor="English">English</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            id="French"
+            className="lan"
+            defaultValue="French"
+          />
+          <label htmlFor="French">French</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            id="German"
+            className="lan"
+            defaultValue="German"
+          />
+          <label htmlFor="German">German</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            className="lan"
+            id="Italian"
+            defaultValue="Italian"
+          />
+          <label htmlFor="Italian">Italian</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            id="Portuguese"
+            className="lan"
+            defaultValue="Portuguese"
+          />
+          <label htmlFor="Portuguese">Portuguese</label>
+          <br></br>
+          <input
+            onChange={this.handleLanguages.bind(this)}
+            type="checkbox"
+            id="Russian"
+            className="lan"
+            defaultValue="Russian"
+          />
+          <label htmlFor="Russian">Russian</label>
+          <br></br>
+          <br></br>
+          <br></br>
+          <textarea
+            name="message"
+            style={{ width: "300px", height: "300px" }}
+            onChange={this.handleArea.bind(this)}
+            defaultValue="Enter your description here."
+            onClick={this.handleClick.bind(this)}
+          ></textarea>
+          <label htmlFor="myfile">Photo :</label>
+          <br></br>
+          <br></br>
+          <input
+            type="file"
+            id="myfile"
+            name="myfile"
+            onChange={this.handleImg.bind(this)}
+          ></input>
+          <br></br>
+          <br></br>
+          <button type="button" onClick={this.handleSubmit.bind(this)}>
+            Submit
+          </button>
         </form>
       </div>
     );

@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./profile.css";
 class FindProfile extends React.Component {
   constructor(props) {
     super(props);
@@ -7,8 +7,8 @@ class FindProfile extends React.Component {
   render() {
     return (
       <div id="Profile">
-        <img src={this.props.data.imgURL} />
-        <p>Name : {this.props.data.Name}</p>
+        <p>Description : {this.props.data.description}</p>
+        <p>Name : {this.props.data.name}</p>
         <p>City : {this.props.data.city}</p>
         <p>Age : {this.props.data.age}</p>
         <p>Gender :{this.props.data.gender}</p>

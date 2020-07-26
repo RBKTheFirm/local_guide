@@ -33,6 +33,8 @@ const GuideSchema = new mongoose.Schema({
   city: String,
   show: Boolean,
   img: { data: Buffer, contentType: String },
+  phone: Number,
+  email: String,
 });
 const Guide = mongoose.model("Guide", GuideSchema);
 module.exports = Guide;
