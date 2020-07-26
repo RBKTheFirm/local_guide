@@ -123,17 +123,15 @@ export class Home extends Component {
           <section id="banner">
             <div className="inner">
               <header>
-                <h1>This is Urban</h1>
+                <h1>Your Local Guide</h1>
                 <p>
-                  Aliquam libero augue varius non odio nec faucibus congue
+                  Connect with private tour guides from different countries
+                  without intermediaries, using Your Local Guide for FREE.
                   <br />
-                  felis quisque a diam rutrum tempus massa accumsan faucibus
-                  purus.
+                  Independent travel planning provides freedom of action and
+                  more...
                 </p>
               </header>
-              <a href="#main" className="button big scrolly">
-                Learn More
-              </a>
             </div>
           </section>
           <div id="main">
@@ -148,27 +146,31 @@ export class Home extends Component {
                     </div>
                   </div>
                   <div className="col col2">
-                    <h3>Maecenas a gravida quam</h3>
+                    <h3>Ulya Strebulaev, CA, USA</h3>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <p>
-                      Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue
-                      malesuada nibh, a varius odio vehicula aliquet. Aliquam
-                      consequat, nunc quis sollicitudin aliquet, enim magna
-                      cursus auctor lacinia nunc ex blandit augue. Ut vitae
-                      neque fermentum, luctus elit fermentum, porta augue.
-                      Nullam ultricies, turpis at fermentum iaculis, nunc justo
-                      dictum dui, non aliquet erat nibh non ex.
+                      We had the most remarkable family tour with Peter Sommer
+                      Travels. Not only everything was perfect, but we felt, in
+                      every instance, that our guides and our gulet crew truly
+                      cared about us, both the kids and adults, and did their
+                      best to make this trip memorable. For our well-traveled
+                      children (aged 9 and 6) this definitely has become the
+                      most eye-opening, adventurous, and stunning journey of
+                      their life - something they will remember, draw upon, and
+                      cherish for many years to come.
                     </p>
                     <p>
-                      Sed congue malesuada nibh, a varius odio vehicula aliquet.
-                      Aliquam consequat, nunc quis sollicitudin aliquet, enim
-                      magna cursus auctor lacinia nunc ex blandit augue. Ut
-                      vitae neque fermentum, luctus elit fermentum, porta augue.
-                      Nullam ultricies, turpis at fermentum iaculis, nunc justo
-                      dictum dui, non aliquet erat nibh non ex.{" "}
+                      For adults, we were pleasantly surprised by the diversity
+                      of our trip: from neolithic archaeological sites to
+                      medieval castles, from swimming to get obsidian to talks
+                      on board of our wonderful gulet, from ever-changing and
+                      filled with surprises meals offered on board to culinary
+                      experiences on the shore, every island and every new
+                      activity offered new experiences. We definitely will be
+                      back!
                     </p>
-                    <a href="#" className="button">
-                      Learn More
-                    </a>
                   </div>
                 </div>
               </div>
@@ -178,27 +180,28 @@ export class Home extends Component {
               <div className="inner">
                 <div className="flex flex-2">
                   <div className="col col2">
-                    <h3>Suspendisse quis massa vel justo</h3>
+                    <h3>Janet Callaghan, WA, Australia</h3>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                     <p>
-                      Etiam posuere hendrerit arcu, ac blandit nulla. Sed congue
-                      malesuada nibh, a varius odio vehicula aliquet. Aliquam
-                      consequat, nunc quis sollicitudin aliquet, enim magna
-                      cursus auctor lacinia nunc ex blandit augue. Ut vitae
-                      neque fermentum, luctus elit fermentum, porta augue.
-                      Nullam ultricies, turpis at fermentum iaculis, nunc justo
-                      dictum dui, non aliquet erat nibh non ex.
+                      What a wonderful experience! The two tour leaders who were
+                      archaeologists enthralled us with the history of the
+                      Islands. The food was bountiful. On the boat the meals
+                      were wholesome and delicious. We were treated to wonderful
+                      meals on the the Islands that let us sample each Island's
+                      speciality. There was free time on each of the Islands
+                      that allowed for shopping, exploring or sitting round
+                      watching island life sipping a drink!
                     </p>
                     <p>
-                      Sed congue malesuada nibh, a varius odio vehicula aliquet.
-                      Aliquam consequat, nunc quis sollicitudin aliquet, enim
-                      magna cursus auctor lacinia nunc ex blandit augue. Ut
-                      vitae neque fermentum, luctus elit fermentum, porta augue.
-                      Nullam ultricies, turpis at fermentum iaculis, nunc justo
-                      dictum dui, non aliquet erat nibh non ex.{" "}
+                      The accommodation on the gulet was more than adequate with
+                      rooms being serviced everyday. There was ample deck space
+                      to lounge, reading or talking. The staff on the Gulet were
+                      lovely and attentive. Excellent.
                     </p>
-                    <a href="#" className="button">
-                      Learn More
-                    </a>
                   </div>
                   <div className="col col1 first">
                     <div className="image round fit">
@@ -243,11 +246,6 @@ export class Home extends Component {
                   </a>
                 </li>
               </ul>
-              <p>
-                &copy; Untitled. All rights reserved. Design:{" "}
-                <a href="https://templated.co">The Firm</a>. Images:{" "}
-                <a href="https://unsplash.com">Unsplash</a>.
-              </p>
             </div>
           </footer>
         </div>
