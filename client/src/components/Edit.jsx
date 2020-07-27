@@ -66,6 +66,7 @@ class Edit extends React.Component {
 
   render() {
     return (
+
       <div className="container">
         <form>
           <label htmlFor="name">Full Name</label>
@@ -107,6 +108,7 @@ class Edit extends React.Component {
             onChange={this.handlePhone.bind(this)}
           />
           <label htmlFor="gender">Gender</label>
+
           <select id="gender" onChange={this.handleGender.bind(this)}>
             <option value="">Gender</option>
             <option value="male">Male</option>
@@ -208,6 +210,7 @@ class Edit extends React.Component {
           <button type="button" onClick={this.handleSubmit.bind(this)}>
             Submit
           </button>
+
         </form>
       </div>
     );
