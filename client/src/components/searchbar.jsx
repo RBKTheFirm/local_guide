@@ -66,6 +66,8 @@ class Search extends React.Component {
             </nav>
           </div>
           <div id="searchBar">
+            <br></br>
+
             <select
               className="browser-default custom-select custom-select-lg mb-3"
               onChange={this.handleChangeCity.bind(this)}
@@ -83,7 +85,7 @@ class Search extends React.Component {
               <option value="Mahdia">Mahdia</option>
               <option value="Medenin">Medenin</option>
               <option value="Monastir">Monastir</option>
-              <option value="Nabel">Nabel/</option>
+              <option value="Nabel">Nabel</option>
               <option value="Sfax">Sfax</option>
               <option value="Siliana">Siliana</option>
               <option value="SidiBouzid">SidiBouzid</option>
@@ -108,6 +110,9 @@ class Search extends React.Component {
               <option value="Russian">Russian</option>
               <option value="Spanish">Spanish</option>
             </select>
+            <br></br>
+            <br></br>
+
             <select
               className="custom-select custom-select-sm"
               onChange={this.handleChangeGender.bind(this)}
@@ -127,9 +132,6 @@ class Search extends React.Component {
               Search
             </button>
           </div>
-          <p>{this.state.selectCity}</p>
-          <p>{this.state.selectLang}</p>
-          <p>{this.state.selectGender}</p>
         </div>
       );
     } else {
